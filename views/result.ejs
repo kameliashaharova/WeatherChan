@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather App</title>
+    <meta name="Weather Application" content="Check weather anywhere in the world">
+    <link href="/stylesheets/result.css" rel="stylesheet" type="text/css">
+    <script src='../server.js'></script>
+</head>
+
+<body>
+    <div id="clouds">
+        <div class="cloud x1"></div>
+        <div class="cloud x2"></div>
+        <div class="cloud x3"></div>
+        <div class="cloud x4"></div>
+        <div class="cloud x5"></div>
+        <div class="cloud x6"></div>
+        <div class="cloud x7"></div>
+        <div class="cloud x8"></div>
+        <div class="cloud x9"></div>
+        <div class="cloud x10"></div>
+        <div class="cloud x11"></div>
+    </div>
+    <h1> WeatherChan </h1>
+    <div class="container">
+
+        <fieldset>
+            <form action="/" method="post">
+                <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
+                <span class="input-group-btn">
+                    <input type="submit" class="ghost-button" value="🔍">
+                    <div class="result">
+
+                        <% if(temp !== null)  {%>
+                        <h2 class="temp"><%= temp %>°F</h2>
+                        <% } %>
+
+                        
+
+                        <% if(icon !== null)  {%>
+                        <img class="icon" src="http://openweathermap.org/img/w/<%= icon %>.png" alt="">
+                        <% } %>
+
+                        <% if(des !== null)  {%>
+                        <h3 class="des"><%= des %></h3>
+                        <% } %>
+
+                        <% if(city !== null)  {%>
+                        <p class="city"><%= city %></p>
+                        <% } %>
+
+                        <% if(country !== null)  {%>
+                        <h4 class="country"><%= country %><h4>
+                        <% } %>
+                    </div>
+                </span>
+    </div>
+    </fieldset>
+    </form>
+    </div>
+</body>
+<script src="server.js"></script>
+
+</html>
